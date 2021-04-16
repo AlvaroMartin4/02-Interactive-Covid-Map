@@ -237,8 +237,8 @@ _./src/map.css_
 
 .affected-marker {
   stroke-width: 1;
-  stroke: #C6FCED;
-  fill: #D495CC;
+  + stroke: #C6FCED;
+  + fill: #D495CC;
   fill-opacity: 0.7;
 }
 ```
