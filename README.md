@@ -1,6 +1,6 @@
 # 02-Interactive-Covid-Map
 
-# Pinning locations + scale + update of values
+# Pinning locations + scale + updating values
 
 We want something like this:
 
