@@ -1,7 +1,5 @@
 # 02-Interactive-Covid-Map
 
-# Pinning locations + scale + updating values
-
 We want something like this:
 
 ![map affected coronavirus](./content/gif.gif "affected coronavirus")
