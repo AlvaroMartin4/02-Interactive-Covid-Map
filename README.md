@@ -5,12 +5,10 @@ We want something like this:
 ![map affected coronavirus](./content/gif.gif "affected coronavirus")
 
 
-We have to face three challenges here:
+We have to face two challenges here:
 
 - Place color background on a map based on affected cases.
 - Scale color background  on affected number.
-- Spain got canary island that is a territory placed far away, we need to cropt that islands and paste them in a visible
-  place in the map.
 
 # Steps
 
@@ -262,4 +260,4 @@ svg
 ```
 
 
-# Author: Alvaro Martin Jimenez
+## Author: Álvaro Martín Jiménez
