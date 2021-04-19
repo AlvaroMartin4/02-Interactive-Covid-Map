@@ -17,7 +17,14 @@ We have to face two challenges here:
 ```bash
 npm install
 ```
-- Let's assign a range of colores for that domain:
+
+- After that execute the following:
+
+```bash
+npm start
+```
+
+- Let's assign a range of colors for that domain:
 
 _./src/index.ts_
 
@@ -65,25 +72,6 @@ svg
 +      })
   // data loaded from json file
   .attr("d", geoPath as any);
-```
-
-- Let's change the projection we are using (we will need to tweak as well the
-  _scale_ and _translate_ values):
-
-_./src/index.ts_
-
-```diff
-const aProjection =
--   d3
--  .geoMercator()
-+  d3Composite
-+  .geoConicConformalSpain()
-  // Let's make the map bigger to fit in our resolution
--  .scale(2000)
-+  .scale(3300)
-  // Let's center the map
--  .translate([600, 2000]);
-+  .translate([500, 400]);
 ```
 
 - In our updateMap function let´s add this to update the color background too. 
@@ -212,16 +200,6 @@ export const latLongCommunities = [
 ];
 ```
 
-- Let's import it:
-
-_./src/index.ts_
-
-```diff
-import * as d3 from "d3";
-import * as topojson from "topojson-client";
-+ import { latLongCommunities } from "./communities";
-```
-
 - If we run the example we can check that know circles are shown in the right size and the autonomous community with a specific background color that indicates the severity of the cases
 
 -Let´s change the circle color too
@@ -241,22 +219,6 @@ _./src/map.css_
   + fill: #D495CC;
     fill-opacity: 0.7;
 }
-```
-
-- Let's apply this style to the black circles that we are rendering:
-
-_./src/index.ts_
-
-```diff
-svg
-  .selectAll("circle")
-  .data(latLongCommunities)
-  .enter()
-  .append("circle")
-+  .attr("class", "affected-marker")
-  .attr("r", d => calculateRadiusBasedOnAffectedCases(d.name))
-  .attr("cx", d => aProjection([d.long, d.lat])[0])
-  .attr("cy", d => aProjection([d.long, d.lat])[1]);
 ```
 
 
